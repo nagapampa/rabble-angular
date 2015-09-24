@@ -1,0 +1,24 @@
+{
+  "name": "rabble-angular",
+  "version": "1.0.0",
+  "description": "Rabble sample application using AngularJS",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "bower install",
+    "prestart": "npm install",
+    "start": "http-server -a 0.0.0.0 -p 8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nagapampa/rabble-angular.git"
+  },
+  "author": "nagapampa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nagapampa/rabble-angular/issues"
+  },
+  "devDependencies": {
+    "http-server": "0.8.4"
+  },
+  "homepage": "https://github.com/nagapampa/rabble-angular"
+}

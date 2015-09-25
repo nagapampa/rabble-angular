@@ -5,15 +5,19 @@
   <title>Rabble Records</title>
 
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/custom.css">
 
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-soundmanager2/dist/angular-soundmanager2.js"></script>
   
   <script src="js/app.js"></script>
-  <script src="js/controllers/albumListCtrl.js"></script>
-  <script src="js/controllers/artistListCtrl.js"></script>
-  <script src="js/controllers/posterListCtrl.js"></script>
+  <script src="js/controllers/albumCtrl.js"></script>
+  <script src="js/controllers/artistCtrl.js"></script>
+  <script src="js/controllers/posterCtrl.js"></script>
+  <script src="js/controllers/navigationCtrl.js"></script>
+  <script src="js/controllers/loginCtrl.js"></script>
 
   <script src="js/services/models/albumServices.js"></script>
 
@@ -22,18 +26,13 @@
 
 	<div class="container">
 
-		<div class="row">
-			<div class="col-md-6">
-				<img ng-src="img/logo.png" alt="Rabble Records"/>
-			</div>
-			<div class="col-md-6">
-				Search: <input ng-model="query">
-			</div>
-		</div>
+		<div ng-include = "'partials/header.html'"></div>
 
 		<div ng-include = "'partials/navigation.html'"></div>
 		
 		<div ng-view></div>
+
+		<div ng-include = "'partials/footer.html'"></div>
 
 	</div>
 

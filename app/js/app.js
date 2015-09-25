@@ -5,7 +5,8 @@
 var rabbleApp = angular.module('rabbleApp', [
   'ngRoute',
   'rabbleControllers',
-  'rabbleServices'
+  'rabbleServices',
+  'angularSoundManager'
 ]);
 
 var rabbleControllers = angular.module('rabbleControllers', []);
@@ -17,13 +18,19 @@ rabbleApp.config(['$routeProvider',
     $routeProvider.
       when('/albums', {
         templateUrl: 'partials/album-list.html',
-        controller: 'AlbumListCtrl'
+        controller: 'AlbumCtrl'
+      }).when('/albums/:id', {
+        templateUrl: 'partials/album-detail.html',
+        controller: 'AlbumDetailCtrl'
       }).when('/artists', {
         templateUrl: 'partials/artist-list.html',
-        controller: 'ArtistListCtrl'
+        controller: 'ArtistCtrl'
       }).when('/posters', {
         templateUrl: 'partials/poster-list.html',
-        controller: 'PosterListCtrl'
+        controller: 'PosterCtrl'
+      }).when('/login', {
+        templateUrl: 'partials/login.html',
+        controller: 'LoginCtrl'
       }).
       otherwise({
         redirectTo: '/albums'

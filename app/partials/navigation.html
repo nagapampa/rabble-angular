@@ -1,5 +1,6 @@
-<ul>
-	<li><a href="#/albums">Albums</a></li>
-	<li><a href="#/artists">Artists</a></li>
-	<li><a href="#/posters">Posters</a></li>
+<ul class="nav nav-pills" ng-controller="NavigationCtrl">
+	<li><a ng-href="#/albums" ng-class="{active:isActive('/albums')}">ALBUMS</a></li>
+	<li><a ng-href="#/artists" ng-class="{active:isActive('/artists')}">ARTISTS</a></li>
+	<li><a ng-href="#/posters" ng-class="{active:isActive('/posters')}">POSTERS</a></li>
+	<li class="navbar-right"><a ng-href="#/login">LOGIN</a></li>
 </ul>

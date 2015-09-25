@@ -1,10 +1,9 @@
-{{greeting}}
-
 <div class="row">
 	<div ng-repeat="album in albums | filter:query">
-		<div class="col-md-3">
-			<img ng-src="{{getCachedAlbumImage(album.album.front_cover_art)}}" alt="{{album.album.title}}" />
-			<p>{{album.album.main_artist_name}}</p>
+		<div class="col-md-3 col-sm-4">
+			<img ng-src="{{getCachedAlbumImage(album.album.front_cover_art)}}" alt="{{album.album.title}}" class="img-responsive" />			
+			<div class="title">{{album.album.title}}</div>
+			<a ng-href="#/albums/{{album.album.id}}">{{album.album.main_artist_name}}</a>
 		</div>
 	</div>
 </div>

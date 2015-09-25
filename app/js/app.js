@@ -25,6 +25,9 @@ rabbleApp.config(['$routeProvider',
       }).when('/artists', {
         templateUrl: 'partials/artist-list.html',
         controller: 'ArtistCtrl'
+      }).when('/artists/:id', {
+        templateUrl: 'partials/artist-detail.html',
+        controller: 'ArtistDetailCtrl'
       }).when('/posters', {
         templateUrl: 'partials/poster-list.html',
         controller: 'PosterCtrl'

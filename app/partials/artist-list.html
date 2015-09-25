@@ -1,1 +1,17 @@
-{{greeting}}
+<div class="row">
+	<div class="col-md-4">
+		<img ng-src="{{getCachedArtistImage(artist.banner_image)}}" alt="{{artist.name}}" class="img-responsive" />
+	</div>
+	<div class="col-md-8">
+
+	</div>
+</div>
+
+<div class="row">
+	<div ng-repeat="artist in artists | filter:query">
+		<div class="col-md-3 col-sm-4">
+			<img ng-src="{{getCachedArtistImage(artist.artist.banner_image)}}" alt="{{artist.artist.name}}" class="img-responsive" />
+			<a ng-href="#/artists/{{artist.artist.id}}">{{artist.artist.name}}</a>
+		</div>
+	</div>
+</div>

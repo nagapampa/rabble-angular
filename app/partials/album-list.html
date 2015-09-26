@@ -1,4 +1,13 @@
 <div class="row">
+	<div class="col-md-8">
+
+	</div>
+	<div class="col-md-4">
+		<input ng-model="query" placeholder="SEARCH" id="search">
+	</div>
+</div>
+
+<div class="row">
 	<div ng-repeat="album in albums | filter:query">
 		<div class="col-md-3 col-sm-4">
 			<img ng-src="{{getCachedAlbumImage(album.album.front_cover_art)}}" alt="{{album.album.title}}" class="img-responsive" />			

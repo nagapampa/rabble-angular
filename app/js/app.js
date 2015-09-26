@@ -31,9 +31,16 @@ rabbleApp.config(['$routeProvider',
       }).when('/posters', {
         templateUrl: 'partials/poster-list.html',
         controller: 'PosterCtrl'
+      }).when('/posters/:id', {
+        templateUrl: 'partials/poster-detail.html',
+        controller: 'PosterDetailCtrl'
       }).when('/login', {
         templateUrl: 'partials/login.html',
         controller: 'LoginCtrl'
+      }).when('/faq', {
+        templateUrl: 'partials/faq.html'
+      }).when('/about', {
+        templateUrl: 'partials/about.html'
       }).
       otherwise({
         redirectTo: '/albums'

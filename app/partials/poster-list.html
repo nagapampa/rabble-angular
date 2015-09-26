@@ -1,1 +1,13 @@
-{{greeting}}
+<div class="row">
+	<div ng-repeat="poster in posters">
+		<div class="col-md-3 col-sm-4">
+			<a ng-href="#/posters/{{poster.poster.id}}">
+				<img ng-src="{{getCachedPosterImage(poster.poster.poster_image_url)}}" alt="{{poster.poster_artist}}" class="img-responsive" />	
+			</a>
+			<div class="title">
+				<a ng-href="#/posters/{{poster.poster.id}}" ng-if="poster.poster.poster_artist">{{poster.poster.poster_artist}}</a>
+				<a ng-href="#/faq" ng-if="!poster.poster.poster_artist">Credit this artist</a>
+			</div>			
+		</div>
+	</div>
+</div>

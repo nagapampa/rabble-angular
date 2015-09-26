@@ -22,7 +22,7 @@
     // put all the tracks in a 'song' array
     var arrSongs = [];
     angular.forEach($scope.album.tracks, function(track) {
-      var song = {id:track.position, title: track.title, artist:$scope.album.main_artist_name, url: track.url};
+      var song = {id:track.position, title: track.title, artist:$scope.album.main_artist_name, url: track.url, duration:track.duration};
       arrSongs.push(song);
     });
     $scope.songs = arrSongs;

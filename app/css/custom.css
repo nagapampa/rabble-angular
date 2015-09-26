@@ -60,3 +60,8 @@ a.active {
     background-color: #7C4199;
     border-color: #7C4199;
 }
+
+#song-list{
+    line-height: 2em;
+    padding: 1em;
+}

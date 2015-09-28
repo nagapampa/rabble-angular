@@ -1,6 +1,6 @@
 <div class="row">
 	<div ng-repeat="poster in posters">
-		<div class="col-md-3 col-sm-4">
+		<div class="col-md-3 col-sm-4 col-xs-6">
 			<a ng-href="#/posters/{{poster.poster.id}}">
 				<img ng-src="{{getCachedPosterImage(poster.poster.poster_image_url)}}" alt="{{poster.poster_artist}}" class="img-responsive" />	
 			</a>

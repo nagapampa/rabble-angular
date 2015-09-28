@@ -1,41 +1,39 @@
 <sound-manager></sound-manager>
-<p class="header" id="player-title" ng-click="togglePlayer()">
-	<span class="glyphicon glyphicon-collapse-down" aria-hidden="true" ng-show="!showPlayer"></span> 
-	<span class="glyphicon glyphicon-collapse-up" aria-hidden="true" ng-show="showPlayer"></span> 
-	Currently Playing: {{currentPlaying.title}} by {{currentPlaying.artist}} ({{currentPostion}} / {{currentDuration}})
-</p>
 
-<div id="player" ng-show="showPlayer">
-	<div class="seekBase" seek-track>
-	    <div class="seekLoad" ng-style="{width : ( progress + '%' ) }"></div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <div id="player-title">
+
+    	<div class="row">
+    		<div class="col-sm-2 col-xs-2">
+    			<button class="btn btn-default btn-lg" ng-click="togglePlayer()"><span class="glyphicon glyphicon-collapse-down" aria-hidden="true" ng-show="!showPlayer"></span></span></button>
+		    	<button class="btn btn-default btn-lg" ng-click="togglePlayer()"><span class="glyphicon glyphicon-collapse-up" aria-hidden="true" ng-show="showPlayer"></span></span></button>
+    		</div>
+    		<div class="col-sm-4 hidden-xs">				
+				<div class="text-overflow">{{currentPlaying.title}} by {{currentPlaying.artist}}</div>
+    		</div>
+			<div class="col-sm-6 col-xs-10">
+				<button prev-track class="btn btn-default btn-lg"><span class="glyphicon glyphicon-backward" aria-hidden="true"></span></button>
+				<button pause-music class="btn btn-default btn-lg"><span class="glyphicon glyphicon-pause" aria-hidden="true"></span></button>
+				<button play-music class="btn btn-default btn-lg"><span class="glyphicon glyphicon-play" aria-hidden="true"></span></button>
+				<button stop-music class="btn btn-default btn-lg"><span class="glyphicon glyphicon-stop" aria-hidden="true"></span></button>
+				<button next-track class="btn btn-default btn-lg"><span class="glyphicon glyphicon-forward" aria-hidden="true"></span></button>
+    		</div>
+    	</div>
 	</div>
-	<br />
-	<button play-music>Play</button>
-	-
-	<button pause-music>Pause</button>
-	-
-	<button stop-music>Stop</button>
-	-
-	<button repeat-music>Repeat ({{repeat}})</button>
-	-
-	<button play-pause-toggle data-play="Play!" data-pause="Pause!">Play Toggle</button>
-	-
-	<button prev-track>Prev Track</button>
-	-
-	<button next-track>Next Track</button>
-	-
-	<button clear-playlist>Clear Playlist</button>
-	<br/>
-	<br/>
-	<h5>Playlist</h5>
-	<ul>
-	    <li ng-repeat="song in playlist">
-	        <a play-from-playlist="song">{{song.title}}</a>
-	        -
-	        <a remove-from-playlist="song" data-index="{{$index}}">
-	            <small>(remove)</small>
-	        </a>
-	        <span ng-if="currentPlaying.id == song.id"> - {{current}}</span>
-	    </li>
-	</ul>
-</div>
+
+	<div id="player" ng-show="showPlayer">
+		<div class="seekBase" seek-track>
+		    <div class="seekLoad" ng-style="{width : ( progress + '%' ) }"></div>
+		</div>
+		<h5>Playlist</h5>
+		{{currentPlaying.title}} by {{currentPlaying.artist}} ({{currentPostion}} / {{currentDuration}})
+		<ul>
+		    <li ng-repeat="song in playlist">
+		        <a play-from-playlist="song">{{song.title}}</a>
+		        <span ng-if="currentPlaying.id == song.id"> - {{current}}</span>
+		    </li>
+		</ul>
+	</div>
+  </div>
+</nav>

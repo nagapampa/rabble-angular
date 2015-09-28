@@ -19,14 +19,18 @@
 					{{song.duration}}
 				</div>
 				<div class="col-md-6 col-xs-12 pull-left">
-					<button music-player add-song="song">
-	                	<span class="glyphicon glyphicon-play" aria-hidden="true"></span> 
-	                </button>
+					Play button
 				</div>
 			</div>
         </div>
-        <button play-all="songs">Play all</button>
-        <button play-all="songs" data-play="false">Add all</button>
+        <div class="row">
+        	<div class="col-xs-6">
+        		<button play-all="songs" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-music" aria-hidden="true"></span> Play all</button>
+        	</div>
+        	<div class="col-xs-6">
+        		<button play-all="songs" data-play="false" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add all</button>
+        	</div>
+        </div>
 		<h3 class="header">Options to purchase</h3>
 	</div>
 </div>
